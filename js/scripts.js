@@ -30,14 +30,22 @@ Person.prototype.cEmail = function(input){
 }
 //Person Cool Functions
 Person.prototype.returnAllInformation=function(){
-  return "Name: " + this.first + ", " + this.last + "\n" + "Birthday: " + this.birth + "\n" + "Address: " + this.address + "\n" + "Phone: " + this.phone + "\n" + "Email: " + this.email;
+  return "<strong>Name:</strong> " + this.first + ", " + this.last + "<br>" + "<strong>Birthday:</strong> " + this.birth + "<br>" + "<strong>Address:</strong> " + this.address + "<br>" + "<strong>Phone:</strong> " + this.phone + "<br>" + "<strong>Email:</strong> " + this.email;
 }
 function returnName(inputName, selector){
   var output = inputName.split(" ")
   if(selector === 0){
+    if(output[0]==undefined){
+      return "";
+    } else {
     return output[0];
+    }
   } else if(selector===1) {
-    return output[1];
+    if(output[1]==undefined){
+      return "";
+    } else {
+      return output[1];
+    }
   }
   return -1;
 }
@@ -85,7 +93,7 @@ $(document).ready(function(){
     if(myAddresses[0] == null || checkFunction(callThis) == 1){
       myAddresses.push(callThis);
     } else {
-      alert("Sorry Email taken.");
+      alert("Sorry Email or Phone taken.");
     }
 
     });

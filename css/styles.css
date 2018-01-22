@@ -1,0 +1,11 @@
+.jumbotron {
+  text-align: center;
+}
+
+.results p {
+  float: left;
+}
+
+.results {
+  display: none;
+}
